@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url('../src/assets/images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-position: 90% -25%;
+}
+
+#cta {
+  background-image: url('./assets/images/bg-simplify-section-desktop.svg');
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 576px) {
+  body {
+    background-position: 50px -50px;
+    background-size: 500px;
+  }
+
+  #cta {
+    background-image: url('./assets/images/bg-simplify-section-mobile.svg');
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+    display: none; /* Hide hamburger icon by default */
+  }
+  
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+  
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+  
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+  
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+  
+  .open .hamburger-middle {
+    display: none;
+  }
+  
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+  
+ /* Tablets and larger devices */
+@media (max-width: 1024px) {
+    .hamburger {
+      display: block; /* Show hamburger icon for tablets and larger devices */
+    }
+  }
+  
+  /* Mobile view for specific tablet sizes */
+  @media only screen 
+    and (min-device-width: 768px) /* Minimum width for tablets */
+    and (max-device-width: 1024px) /* Maximum width for tablets */
+    and (orientation: portrait) /* Portrait orientation */
+    and (-webkit-min-device-pixel-ratio: 1) /* Pixel ratio 1 */
+    and (max-width: 1024px) /* Additional condition to ensure it applies only to tablets */
+  {
+    /* Add your mobile view styles for tablets here */
+  }
+  
+  /* Mobile view for specific iPad landscape size */
+  @media only screen 
+    and (min-device-width: 1024px) /* Minimum width for iPads */
+    and (max-device-width: 1366px) /* Maximum width for iPads */
+    and (orientation: landscape) /* Landscape orientation */
+    and (-webkit-min-device-pixel-ratio: 1) /* Pixel ratio 1 */
+  {
+    /* Add your mobile view styles for iPads in landscape mode here */
+  }
+  
+  
+  
